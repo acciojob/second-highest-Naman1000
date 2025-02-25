@@ -9,21 +9,25 @@
 <body>	
 	<script>
 		function secondHighest(arr) {
-			//Write your code here if (arr.length < 2) return -Infinity;
+			//Write your code here 
+			if (arr.length < 2) return -Infinity;
 
-        let max = -Infinity, secondMax = -Infinity;
+       
 
-        for (let num of arr) {
+let larnum = arr[0];
+let secondlar = arr[0];
+
+        for (let i=0;i<arr.length;i++) {
             num = Number(num); // Convert input to number
-            if (num > max) {
-                secondMax = max;
-                max = num;
-            } else if (num > secondMax && num < max) {
-                secondMax = num;
+            if (arr[i] > larnum) {
+                secondlar = larnum;
+                larnum= arr[i];
+            } else if (arr[i] > secondlar) {
+                secondlar = arr[i];
             }
         }
 
-        return secondMax === -Infinity ? -Infinity : secondMax;
+        return secondlar === -Infinity ? -Infinity : secondlar;
 			
 			
 		}
