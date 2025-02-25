@@ -12,22 +12,19 @@
 			//Write your code here 
 			if (arr.length < 2) return -Infinity;
 
-       
+        let firstmax = -Infinity, secondMax = -Infinity;
 
-let larnum = arr[0];
-let secondlar = arr[0];
-
-        for (let i=0;i<arr.length;i++) {
+        for (let num of arr) {
             num = Number(num); // Convert input to number
-            if (arr[i] > larnum) {
-                secondlar = larnum;
-                larnum= arr[i];
-            } else if (arr[i] > secondlar) {
-                secondlar = arr[i];
+            if (num > max) {
+                secondMax = max;
+                max = num;
+            } else if (num > secondMax ) {
+                secondMax = num;
             }
         }
 
-        return secondlar === -Infinity ? -Infinity : secondlar;
+        return secondMax === -Infinity ? -Infinity : secondMax;
 			
 			
 		}
