@@ -12,20 +12,21 @@
 			//Write your code here 
 			if (arr.length < 2) return -Infinity;
 
-        let firstmax = -Infinity, secondMax = -Infinity;
+        if (arr.length < 2) return -Infinity;
+
+        let max = -Infinity, secondMax = -Infinity;
 
         for (let num of arr) {
             num = Number(num); // Convert input to number
             if (num > max) {
                 secondMax = max;
                 max = num;
-            } else if (num > secondMax && num < m) {
+            } else if (num > secondMax && num < max) {
                 secondMax = num;
             }
         }
 
         return secondMax === -Infinity ? -Infinity : secondMax;
-			
 			
 		}
 
